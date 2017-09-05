@@ -1,0 +1,212 @@
+@tabs-prefix-cls: ~"@{css-prefix}tabs";
+
+.@{tabs-prefix-cls} {
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    color: @text-color;
+    .clearfix;
+
+    &-bar {
+        outline: none;
+    }
+
+    &-ink-bar {
+        height: 4px;
+        box-sizing: border-box;
+        background-color: @primary-color;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+        z-index: 1;
+        border-radius: 2px;
+        border: 1px solid #5295e7;
+        transition: transform .3s @ease-in-out;
+        transform-origin: 0 0;
+    }
+
+    &-bar {
+        border-bottom: 1px solid #d4dfe5;
+        margin-bottom: 16px;
+    }
+    &&-card > &-bar{
+        border-bottom-color: #b9bec5;
+    }
+    &-nav-container {
+        margin-bottom: -1px;
+        line-height: @line-height-base;
+        font-size: @font-size-base;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        .clearfix;
+    }
+
+    &-nav-container-scrolling {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    &-nav-wrap {
+        overflow: hidden;
+        margin-bottom: -1px;
+    }
+
+    &-nav-scroll {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &-nav-right{
+        float: right;
+    }
+
+    &-nav {
+        padding-left: 0;
+        margin: 0;
+        float: left;
+        list-style: none;
+        box-sizing: border-box;
+        position: relative;
+        transition: transform 0.5s @ease-in-out;
+
+        &:before,
+        &:after {
+            display: table;
+            content: " ";
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        .@{tabs-prefix-cls}-tab-disabled {
+            pointer-events: none;
+            cursor: default;
+            color: #ccc;
+        }
+
+        .@{tabs-prefix-cls}-tab {
+            display: inline-block;
+            height: 100%;
+            padding: 14px 32px;
+            margin-right: 16px;
+            box-sizing: border-box;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            transition: color .3s @ease-in-out;
+
+            &:hover {
+                color: @link-hover-color;
+            }
+
+            &:active {
+                color: #5295e7;
+            }
+            .@{css-prefix-iconfont} {
+                width: 14px;
+                height: 14px;
+                margin-right: 5px;
+            }
+        }
+
+        .@{tabs-prefix-cls}-tab-active {
+            color: @primary-color;
+        }
+    }
+    &-mini &-nav-container {
+        font-size: @font-size-base;
+    }
+
+    &-mini &-tab {
+        margin-right: 0;
+        padding: 8px 16px;
+        font-size: @font-size-small;
+    }
+
+    & {
+        .@{tabs-prefix-cls}-content-animated {
+            display: flex;
+            flex-direction: row;
+            will-change: transform;
+            transition: transform .3s @ease-in-out;
+        }
+
+        .@{tabs-prefix-cls}-tabpane {
+            flex-shrink: 0;
+            width: 100%;
+            transition: opacity .3s;
+            opacity: 1;
+        }
+
+        .@{tabs-prefix-cls}-tabpane-inactive {
+            opacity: 0;
+            height: 0;
+        }
+    }
+
+    // card style
+    &&-card > &-bar &-nav-container {
+        height: 32px;
+    }
+    &&-card > &-bar &-ink-bar {
+        visibility: hidden;
+    }
+    &&-card > &-bar &-tab {
+        margin: 0;
+        margin-right: 10px;
+        height: 31px;
+        padding: 5px 16px 4px;
+        border: 1px solid #b9bec5;
+        border-bottom: 0;
+        border-radius: @btn-border-radius @btn-border-radius 0 0;
+        transition: all 0.3s @ease-in-out;
+        background: #f3f3f3;
+    }
+    &&-card > &-bar &-tab-active {
+        height: 32px;
+        padding-bottom: 5px;
+        background: #fff;
+        transform: translateZ(0);
+        border-color: #b9bec5;
+        color: @primary-color;
+    }
+    &&-card > &-bar &-nav-wrap {
+        margin-bottom: 0;
+    }
+    &&-card > &-bar &-tab .@{css-prefix-iconfont}-close {
+        width: 0;
+        height: 22px;
+        font-size: 22px;
+        margin-right: 0;
+        color: @legend-color;
+        text-align: right;
+        vertical-align: middle;
+        overflow: hidden;
+        position: relative;
+        top: -1px;
+        transform-origin: 100% 50%;
+        transition: all 0.3s @ease-in-out;
+        &:hover {
+            color: #444;
+        }
+    }
+
+    &&-card > &-bar &-tab-active .@{css-prefix-iconfont}-close,
+    &&-card > &-bar &-tab:hover .@{css-prefix-iconfont}-close {
+        width: 14px;
+        transform: translateZ(0);
+    }
+}
+
+.@{tabs-prefix-cls}-no-animation{
+    .@{tabs-prefix-cls}-content {
+        transform: none!important;
+
+        > .@{tabs-prefix-cls}-tabpane-inactive {
+            display: none;
+        }
+    }
+}

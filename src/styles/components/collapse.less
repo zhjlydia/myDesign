@@ -1,0 +1,55 @@
+@collapse-prefix-cls: ~"@{css-prefix}collapse";
+
+.@{collapse-prefix-cls}{
+    background-color: #f3f3f3;
+    border-radius: 3px;
+    border: 1px solid @border-color-base;
+
+    & > &-item{
+        border-top: 1px solid @border-color-base;
+        &:first-child {
+            border-top: 0;
+        }
+
+        > .@{collapse-prefix-cls}-header{
+            height: 38px;
+            line-height: 38px;
+            padding-left: 20px;
+            color: #adb4bc;
+            cursor: pointer;
+            position: relative;
+
+            > i{
+                transition: transform @transition-time @ease-in-out;
+            }
+        }
+    }
+    &  > &-item&-item-active > &-header > i{
+        transform: rotate(90deg);
+    }
+
+    &-content{
+        //display: none;
+        overflow: hidden;
+        color: #333;
+        padding: 0 20px;
+        background-color: #fff;
+        border-top: 1px solid @border-color-base;
+        & > &-box {
+            padding-top: 22px;
+            padding-bottom: 22px;
+        }
+    }
+    &-item-active > &-content{
+        //display: block;
+    }
+    &-item:last-child {
+        > .@{collapse-prefix-cls}-content {
+            border-radius: 0 0 3px 3px;
+        }
+    }
+    .spanName{
+        color:#333;
+        padding-left: 10px;
+    }
+}
