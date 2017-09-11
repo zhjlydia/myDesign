@@ -6,7 +6,7 @@
 <script>
     import { oneOf } from '../../utils/assist';
 
-    const prefixCls = 'ivu-btn';
+    const prefixCls = 'sp-btn';
 
     export default {
         name: 'Button',
