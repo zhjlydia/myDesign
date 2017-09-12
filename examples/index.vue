@@ -5,6 +5,9 @@
                 <router-link to="/button" tag="li" active-class="current" class="market-title cursor_pointer">
                     button
                 </router-link>
+                <router-link to="/select" tag="li" active-class="current" class="market-title cursor_pointer">
+                    select
+                </router-link>
             </ul>
         </div>
         <router-view></router-view>

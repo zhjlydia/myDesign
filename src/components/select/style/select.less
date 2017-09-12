@@ -1,0 +1,35 @@
+@select-prefix-cls: ~"@{css-prefix}select";
+.@{select-prefix-cls} {
+    display: inline-block;
+    font-size:14px;
+    position:relative;
+    &-body {
+        height:30px;
+        line-height:30px;
+        border-radius:5px;
+        border:1px solid #b9bec5;
+    }
+    &-icon {
+        float:right;
+        width:26px;
+        height:30px;
+        line-height:30px;
+        text-align:center;
+    }
+    &-dropdown {
+        position:absolute;
+        overflow: auto;
+        top:35px;
+        left:0;
+        border-radius:5px;
+        border:1px solid #b9bec5;
+    }
+    &-drop-item{
+        white-space: nowrap;
+        height:30px;
+        padding:5px 10px;
+        &:hover{
+            background:#eeeff0;
+        }
+    }
+}
