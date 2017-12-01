@@ -1,0 +1,26 @@
+.hover(@color: @input-hover-border-color) {
+    border-color: @color;
+}
+
+// fix chrome 12px bug, support ie
+.iconfont-size-under-12px(@size, @rotate: 0deg) {
+    display: inline-block;
+    @font-scale: unit(@size / @font-size-base);
+    font-size: @font-size-base;
+    font-size:~"@{size} \9"; // ie8-9
+    transform: scale(@font-scale) rotate(@rotate);
+     :root & {
+        font-size: @font-size-base; // reset ie9 and above
+    }
+}
+
+.disabled() {
+    background-color: @input-disabled-bg;
+    opacity: 1;
+    cursor: @cursor-disabled;
+    color: #ccc;
+    border-color: @input-disabled-border-color;
+    &:hover {
+        .hover(@input-border-color);
+    }
+}

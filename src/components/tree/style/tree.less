@@ -1,0 +1,38 @@
+@tree-prefix-cls: ~"@{css-prefix}tree";
+@node-prefix-cls: ~"@{css-prefix}tree-node";
+.@{tree-prefix-cls} {
+    &-item {
+        padding-left: 20px;
+        position: relative;
+        margin: 5px 0;
+        -webkit-user-drag : none ;
+        user-drag : none ;
+            cursor: move;
+    }
+    &-title {
+        display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #b9bec5;
+    }
+    &-arrow {
+        position: absolute;
+        left: 0;
+        top:50%;
+        margin-top:-6px;
+        transition: 0.5s all ease;
+    }
+    &-arrow-open {
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+    &-arrow-hidden{
+        display:none;
+    }
+}
+
+.@{node-prefix-cls} {
+    padding-left: 20px;
+}

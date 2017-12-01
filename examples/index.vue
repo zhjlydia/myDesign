@@ -2,11 +2,14 @@
     <div>
         <div class="market-nav-position">
             <ul class="market-nav-ul">
-                <router-link to="/button" tag="li" active-class="current" class="market-title cursor_pointer">
-                    button
-                </router-link>
                 <router-link to="/select" tag="li" active-class="current" class="market-title cursor_pointer">
                     select
+                </router-link>
+                <router-link to="/tree" tag="li" active-class="current" class="market-title cursor_pointer">
+                    tree
+                </router-link>
+                <router-link to="/tag" tag="li" active-class="current" class="market-title cursor_pointer">
+                    tag
                 </router-link>
             </ul>
         </div>
