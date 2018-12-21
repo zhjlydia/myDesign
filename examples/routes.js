@@ -1,19 +1,20 @@
-import index from './index.vue'
-import select from './pages/select.vue'
-import tree from './pages/tree.vue'
-import tag from './pages/tag.vue'
+import index from "./index.vue";
+import tag from "./pages/tag.vue";
+import componentsView from "./pages/componentsView.vue";
+import navData from "./nav.config.json";
 // 配置路由
-export default [{
-    path: '/',
+
+const generateComponentRoute = () => {};
+let route = [
+  {
+    path: "/",
     component: index,
-    children: [{
-        path: '/select',
-        component: select
-    }, {
-        path: '/tree',
-        component: tree
-    }, {
-        path: '/tag',
-        component: tag
-    }]
-}]
+    children: [
+      {
+        path: "/components",
+        component: componentsView
+      }
+    ]
+  }
+];
+export default route;
